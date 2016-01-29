@@ -23,3 +23,16 @@ for current_number in numbers {
 for (index,dato) in data.enumerate() {
     NSLog("Index: \(index) - Data: \(dato)")
 }
+
+
+//Bloque
+var total : Int = 0
+
+var myblock : (Int) -> Void = { (moc: Int!) in
+    total += moc
+    NSLog("Valor de Total dentro del bloque \(total)")
+    
+}
+
+myblock(2)
+myblock(4)

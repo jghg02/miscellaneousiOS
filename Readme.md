@@ -38,7 +38,7 @@ __Objective-C__
                                         BOOL *stop) {
         NSLog(@"index: %ld Value: %@", idx, obj);
     }];
-***
+
 __Swift__
 
 Definición de un _arrary_:
@@ -68,6 +68,63 @@ Formas para recorrer un array:
     	NSLog("Index: \(index) - Data: \(dato)")
 	}
 	
+***
+### Blocks
+
+
+Son porciones de codigo que se almacenan en variables, se pueden pasar como argumento, devolver como resultado de un mensaje. Son _funciones de primer nivel_
+
+Los bloques se utilizan para:
+
+- Enumeración de colectores.
+- Ordenación (el bloque se proporciona como el método de comparación)
+- Notificación (cuando tal cosa ocurra, ejecuta este bloque)
+- Gestores de error (si ocurre un error mientras haces esto, ejecuta este bloque)
+- Gestores de finalización (cuando termines de hacer esto, ejecuta este bloque)
+- Animación de vistas
+- multitarea mediante “Grand Dispatch Central” (GCD)
+
+Declaración en __Obecjtive-C__:
+
+	//Bloque
+	typedef void (^MiTipoBloque)(int);
+	
+Definición en __Obecjtive-C__:
+
+	MiTipoBloque myBlock;
+    __block int total = 0; // modifcamos su valor dentro del Bloque
+    
+    myBlock = ^void(int to){
+        total += to;
+        NSLog(@"Valor del Total %i",total);
+    };
+
+Ejecución del Bloque: 
+
+    myBlock(2);
+    myBlock(200);
+    
+__Swift__:
+
+
+	var total : Int = 0
+
+Delcaración del Bloque
+
+	var myblock : (Int) -> Void = { (moc: Int!) in
+    	total += moc
+	    NSLog("Valor de Total dentro del bloque \(total)")
+    
+	}
+	
+	//Variable myblock de tipo Int que ejecuta la suma del valor que se le pasa por parametro que es otro valor entero 
+	
+Ejecución de Bloque:
+	
+	myblock(2)
+	myblock(4)
+
+
 
 ***
 
