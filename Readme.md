@@ -27,6 +27,15 @@ Formas para recorrer un __Array__:
 	 for (id current_object in array) {
         NSLog(@"data %@",current_object);
      }
+     
+· __Block__:
+
+    //Block
+    [array enumerateObjectsUsingBlock:^(id obj,
+                                        NSUInteger idx,
+                                        BOOL *stop) {
+        NSLog(@"index: %ld Value: %@", idx, obj);
+    }];
 
 ***
 

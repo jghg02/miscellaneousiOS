@@ -38,6 +38,13 @@ typedef void (^MiTipoBloque)(int);
         NSLog(@"data %@",current_object);
     }
     
+    //Block
+    [array enumerateObjectsUsingBlock:^(id obj,
+                                        NSUInteger idx,
+                                        BOOL *stop) {
+        NSLog(@"index: %ld Value: %@", idx, obj);
+    }];
+
     
     //Definifion del bloque
     MiTipoBloque myBlock;
