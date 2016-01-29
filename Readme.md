@@ -124,6 +124,18 @@ Ejecución de Bloque:
 	myblock(2)
 	myblock(4)
 
+Un bloque que retorna un Int: 
+
+	var total : Int = 0
+
+	var myblock : (Int) -> Int = { (moc: Int!) in
+    	total += moc
+	    NSLog("Valor de Total dentro del bloque \(total)")
+    	return total
+    
+	}
+
+	var t : Int = myblock(30) + 40
 
 
 ***

@@ -28,11 +28,23 @@ for (index,dato) in data.enumerate() {
 //Bloque
 var total : Int = 0
 
-var myblock : (Int) -> Void = { (moc: Int!) in
+var myblock2 : (Int) -> Void = { (moc: Int!) in
     total += moc
     NSLog("Valor de Total dentro del bloque \(total)")
     
 }
 
-myblock(2)
-myblock(4)
+myblock2(2)
+myblock2(4)
+
+
+var myblock : (Int) -> Int = { (moc: Int!) in
+    total += moc
+    NSLog("Valor de Total dentro del bloque \(total)")
+    return total
+    
+}
+
+var t : Int = myblock(30) + 40
+
+
