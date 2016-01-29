@@ -21,7 +21,10 @@ typedef void (^MiTipoBloque)(int);
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"iOS", @"Android", @"Phone", nil];
+    //NSArray - Inmutable
+    
+    //NSArray *array = [[NSArray alloc] initWithObjects:@"iOS", @"Android", @"Phone", nil];
+    NSArray *array = @[@"JOSUE",@"Hernandez",@"Santiago",@"Canada",@"Toronto"];
     NSLog(@"Log %lu",(unsigned long)[array count]);
     
     //For
@@ -30,6 +33,7 @@ typedef void (^MiTipoBloque)(int);
         NSLog(@"Each Element %@",ob);
     }
     
+    //For in
     for (id current_object in array) {
         NSLog(@"data %@",current_object);
     }
