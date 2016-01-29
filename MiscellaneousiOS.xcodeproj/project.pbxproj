@@ -26,6 +26,7 @@
 		D62906351C5B94F30051AA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D62906381C5B94F30051AA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D629063A1C5B94F30051AA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D672CC0E1C5BBD8300AA7AA1 /* SwiftPlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftPlayGround.playground; path = Swift/SwiftPlayGround.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		D62906281C5B94F30051AA23 /* MiscellaneousiOS */ = {
 			isa = PBXGroup;
 			children = (
+				D672CC0D1C5BBCD100AA7AA1 /* Swift */,
 				D629062C1C5B94F30051AA23 /* AppDelegate.h */,
 				D629062D1C5B94F30051AA23 /* AppDelegate.m */,
 				D629062F1C5B94F30051AA23 /* ViewController.h */,
@@ -77,6 +79,14 @@
 				D629062A1C5B94F30051AA23 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D672CC0D1C5BBCD100AA7AA1 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				D672CC0E1C5BBD8300AA7AA1 /* SwiftPlayGround.playground */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +308,7 @@
 				D629063F1C5B94F30051AA23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
