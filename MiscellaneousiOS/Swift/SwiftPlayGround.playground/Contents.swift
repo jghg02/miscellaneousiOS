@@ -68,3 +68,16 @@ dataMutable.sortUsingSelector("caseInsensitiveCompare:")
 for (i,d) in dataMutable.enumerate(){
     NSLog("index-> \(i) --- data-> \(d)")
 }
+
+
+//Dictionaries 
+let dictionary : [String:String!] = ["1":"STGO","2":"VZLA","3":"CAN"]
+NSLog("my dictionary: \(dictionary)")
+
+let valor = dictionary["2"]
+NSLog("Value \(valor)")
+
+for (key,value) in dictionary.enumerate() {
+    NSLog("Each key \(key)")
+    NSLog("Each Value \(value)")
+}

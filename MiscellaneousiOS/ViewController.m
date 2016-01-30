@@ -89,6 +89,35 @@ typedef void (^MiTipoBloque)(int);
         NSLog(@"Sort %@",c);
     }
     
+    
+    //Diccionarios
+    // Literal syntax
+    NSDictionary *inventory = @{
+                                @"Mercedes-Benz SLK250" : [NSNumber numberWithInt:13],
+                                @"Mercedes-Benz E350" : [NSNumber numberWithInt:22],
+                                @"BMW M3 Coupe" : [NSNumber numberWithInt:19],
+                                @"BMW X6" : [NSNumber numberWithInt:16],
+                                };
+    
+    NSLog(@"Diccionario %@",inventory);
+    
+    // Values and keys as arrays
+    NSArray *models = @[@"Mercedes-Benz SLK250", @"Mercedes-Benz E350",
+                        @"BMW M3 Coupe", @"BMW X6"];
+    NSArray *stock = @[[NSNumber numberWithInt:13],
+                       [NSNumber numberWithInt:22],
+                       [NSNumber numberWithInt:19],
+                       [NSNumber numberWithInt:16]];
+    inventory = [NSDictionary dictionaryWithObjects:stock forKeys:models];
+    NSLog(@"%@", inventory);
+    
+    NSLog(@"Value :%@",inventory[@"BMW M3 Coupe"]);
+    
+    for (id key in inventory) {
+        NSLog(@"Ecah Key: %@",key);
+        NSLog(@"Ecah value: %@",inventory[key]);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

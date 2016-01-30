@@ -203,7 +203,70 @@ __Swift__:
     	NSLog("index-> \(i) --- data-> \(d)")
 	}
 
+***
+
+### Diccionarios
+
+Collección de Objectos asociados entre un __key__ y un __value__
+
+__Objective-C__:
+
+_Declaración_:
+
+	// Literal syntax
+    NSDictionary *inventory = @{
+                                @"Mercedes-Benz SLK250" : [NSNumber numberWithInt:13],
+                                @"Mercedes-Benz E350" : [NSNumber numberWithInt:22],
+                                @"BMW M3 Coupe" : [NSNumber numberWithInt:19],
+                                @"BMW X6" : [NSNumber numberWithInt:16],
+                                };
+    
+    NSLog(@"Diccionario %@",inventory);
+    
+    // Values and keys as arrays
+    NSArray *models = @[@"Mercedes-Benz SLK250", @"Mercedes-Benz E350",
+                        @"BMW M3 Coupe", @"BMW X6"];
+    NSArray *stock = @[[NSNumber numberWithInt:13],
+                       [NSNumber numberWithInt:22],
+                       [NSNumber numberWithInt:19],
+                       [NSNumber numberWithInt:16]];
+    inventory = [NSDictionary dictionaryWithObjects:stock forKeys:models];
+    NSLog(@"%@", inventory);
+
+
+_Acceciendo a los valores_:
+
+	NSLog(@"Value :%@",inventory[@"BMW M3 Coupe"]);
+	
+_Recorriendo un Diccionario_:
+
+	//For
+	for (id key in inventory) {
+        NSLog(@"Ecah Key: %@",key);
+        NSLog(@"Ecah value: %@",inventory[key]);
+    }
+    
+__Swift__:
+
+_Declaración_:
+
+	//Dictionaries 
+	let dictionary : [String:String!] = ["1":"STGO","2":"VZLA","3":"CAN"]
+	NSLog("my dictionary: \(dictionary)")
+	
+_Accedcioendo a los valores_:
+
+	let valor = dictionary["2"]
+	NSLog("Value \(valor)")
+
+_Recorriendo un Diccionario_:
+
+	for (key,value) in dictionary.enumerate() {
+    	NSLog("Each key \(key)")
+    	NSLog("Each Value \(value)")
+	}	
 
 ***
+
 
 Follow [@jghg02](https://twitter.com/jghg02) on Twitter.
