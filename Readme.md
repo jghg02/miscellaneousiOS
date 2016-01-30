@@ -188,4 +188,22 @@ Para agregar un valor:
 
 ***
 
+### Sort
+
+__Objective-C__:
+
+	    //Sort
+    [mutable sortUsingSelector:@selector(caseInsensitiveCompare:)];
+    
+__Swift__:
+
+	//Sort
+	dataMutable.sortUsingSelector("caseInsensitiveCompare:")
+	for (i,d) in dataMutable.enumerate(){
+    	NSLog("index-> \(i) --- data-> \(d)")
+	}
+
+
+***
+
 Follow [@jghg02](https://twitter.com/jghg02) on Twitter.

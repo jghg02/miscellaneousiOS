@@ -62,3 +62,9 @@ for current_data in dataMutable! {
 for c in dataMutable.enumerate(){
     NSLog("\(c)")
 }
+
+//Sort
+dataMutable.sortUsingSelector("caseInsensitiveCompare:")
+for (i,d) in dataMutable.enumerate(){
+    NSLog("index-> \(i) --- data-> \(d)")
+}

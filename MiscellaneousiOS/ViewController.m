@@ -81,6 +81,14 @@ typedef void (^MiTipoBloque)(int);
         NSLog(@"Ecah Data into NSMutableArray: %@",current_data);
     }
     
+    
+    //Sort
+    [mutable sortUsingSelector:@selector(caseInsensitiveCompare:)];
+    
+    for (id c in mutable) {
+        NSLog(@"Sort %@",c);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
