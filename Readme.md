@@ -140,4 +140,30 @@ Un bloque que retorna un Int:
 
 ***
 
+### Mutable Array
+
+Los tipos de datos Mutable son aquellos que pueden ser modificados en tiempo de ejecución. 
+
+
+__Objective-C__:
+
+_Declaración_:
+
+	NSMutableArray *mutable = [[NSMutableArray alloc] initWithObjects:@"CAN", @"TO", @"CA", @"VZLA", nil];
+	
+Para acceder a los valores dentro de _NSMUtableArray_:
+
+	//For
+    for (id current_data in mutable){
+        NSLog(@"Ecah Data into NSMutableArray: %@",current_data);
+    }
+    
+Agregando un nuevo elemento al _NSMutabeArray__:
+
+	//Add values into Mutable Array
+    [mutable addObject:@"NEW OBJECT"];
+
+
+***
+
 Follow [@jghg02](https://twitter.com/jghg02) on Twitter.

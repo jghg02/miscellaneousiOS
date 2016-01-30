@@ -57,6 +57,30 @@ typedef void (^MiTipoBloque)(int);
     //Ejecucion del bloque
     myBlock(2);
     myBlock(200);
+    
+    
+    
+    //NSMUtableArray
+    NSMutableArray *mutable = [[NSMutableArray alloc] initWithObjects:@"CAN", @"TO", @"CA", @"VZLA", nil];
+    
+    //Lenght
+    NSLog(@"Lenght Mutable Array %lu",(unsigned long)[mutable count]);
+    
+    //For
+    for (id current_data in mutable){
+        NSLog(@"Ecah Data into NSMutableArray: %@",current_data);
+    }
+    
+    //Add values into Mutable Array
+    [mutable addObject:@"NEW OBJECT"];
+    
+    NSLog(@"Lenght Mutable Array %lu",(unsigned long)[mutable count]);
+    
+    //For
+    for (id current_data in mutable){
+        NSLog(@"Ecah Data into NSMutableArray: %@",current_data);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
