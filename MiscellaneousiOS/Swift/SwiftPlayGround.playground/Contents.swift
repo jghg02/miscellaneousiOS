@@ -48,3 +48,17 @@ var myblock : (Int) -> Int = { (moc: Int!) in
 var t : Int = myblock(30) + 40
 
 
+//NSMUtableArray 
+var dataMutable : NSMutableArray! = ["CAN","VZLA"]
+
+dataMutable?.addObject("STGO")
+
+print("Length \(dataMutable.count)")
+
+for current_data in dataMutable! {
+    NSLog("Current data \(current_data)")
+}
+
+for c in dataMutable.enumerate(){
+    NSLog("\(c)")
+}

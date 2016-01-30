@@ -162,6 +162,28 @@ Agregando un nuevo elemento al _NSMutabeArray__:
 
 	//Add values into Mutable Array
     [mutable addObject:@"NEW OBJECT"];
+    
+__Swift__:
+
+_Declaración_:
+
+	var dataMutable : NSMutableArray! = ["CAN","VZLA"]
+	
+Para acceder a los Valore: 
+
+	//For.
+	for current_data in dataMutable! {
+    	NSLog("Current data \(current_data)")
+	}
+
+	//Enumerate
+	for c in dataMutable.enumerate(){
+    	NSLog("\(c)")
+	}
+	
+Para agregar un valor: 
+
+	dataMutable?.addObject("STGO")
 
 
 ***
