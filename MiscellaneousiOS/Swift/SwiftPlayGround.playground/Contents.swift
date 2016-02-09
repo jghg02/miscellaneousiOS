@@ -81,3 +81,9 @@ for (key,value) in dictionary.enumerate() {
     NSLog("Each key \(key)")
     NSLog("Each Value \(value)")
 }
+
+var intArray : [Int!] = [1,2,3,4,5,6,7,8,9,0]
+let a = intArray.enumerate().reverse()
+print("reverse \(a)")
+
+

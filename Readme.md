@@ -268,5 +268,67 @@ _Recorriendo un Diccionario_:
 
 ***
 
+### GDA (Grand Central Dispatch)
+
+
+Proceso que gestiona los hilos de ejecución en __OS X__ y __iOS__.  [libdispatch](http://libdispatch.macosforge.org/)
+
+
+Las Clases principales son __NSOperation__ y __NSOperationQueue__.
+
+- _NSOperation_ : Creamos las acciones que queremos enviar a otro hilo.
+- _NSOperationQueue_ : Gestiona los hilos generados.
+
+- _NSInvocationOperation_ :  Genera una tarea que llama a un método(@selector) determinado sobre un objeto ya existente. Es apropiada en el caso que tu código ya realiza una tarea (la que queremos mandar a otro hilo) en una clase ya existente.
+
+		// Creamos la cola
+		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+		// Creamos la operación
+		NSInvocationOperation *indexOperation = [[NSInvocationOperation alloc] initWithTarget:self  
+	    selector:@selector(downloadImageURLs) object:nil];
+		// Añadimos la operación a la cola
+		[queue addOperation:indexOperation];
+		
+- _NSBlockOperation_ : Esta es similar a la anterior lo único que en vez de llamar a un método, ejecuta un bloque.
+
+		// Creamos la cola
+		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+		// Creamos la operación
+		NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock: ^{
+		      NSLog(@"Inicio del bloque...");
+	      // Hacemos algo
+   		}];
+		// Añadimos la operación a la cola
+		[queue addOperation:blockOperation];
+
+
+
+__Hilos__
+
+	NSURL *url = [NSURL URLWithString:@"https://c1.staticflickr.com/7/6189/6153717796_06b95f2ff2_b.jpg"];
+    
+    //Cola en segundo plano
+    dispatch_queue_t background = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    
+    //Ejecutamos el bloque en modo asincrono en segundo plano
+    dispatch_async(background, ^{
+        
+        //Obtenemos los datos de la imagen
+        NSData *dataImage = [NSData dataWithContentsOfURL:url];
+        
+        //Creamos la imagen con la info de la URL
+        UIImage *image = [[UIImage alloc] initWithData:dataImage];
+        
+        //Luego seteamos la imagen al UIIMageView todo esto debe estar en el hilo principal de la app
+        //Asi pasamos al hilo prinipal de la app
+        //Siempre debemos cambiar cualquier componente de la Interfaz en el Hilo principal de la App.
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.img.image = image;
+        });
+        
+    });
+
+__Importante__: En relación a los _hilos_ es importante que cualquier modificación que se realize a la interfaz se haga en el hilo principal de la app. 
+
 
 Follow [@jghg02](https://twitter.com/jghg02) on Twitter.

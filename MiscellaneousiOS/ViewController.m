@@ -125,4 +125,35 @@ typedef void (^MiTipoBloque)(int);
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (IBAction)getImageOnclick:(id)sender {
+    NSLog(@"Getting Image");
+    
+    NSURL *url = [NSURL URLWithString:@"https://c1.staticflickr.com/7/6189/6153717796_06b95f2ff2_b.jpg"];
+    
+    //Cola en segundo plano
+    dispatch_queue_t background = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    
+    //Ejecutamos el bloque en modo asincrono en segundo plano
+    dispatch_async(background, ^{
+        
+        //Obtenemos los datos de la imagen
+        NSData *dataImage = [NSData dataWithContentsOfURL:url];
+        
+        //Creamos la imagen con la info de la URL
+        UIImage *image = [[UIImage alloc] initWithData:dataImage];
+        
+        //Luego seteamos la imagen al UIIMageView todo esto debe estar en el hilo principal de la app
+        //Asi pasamos al hilo prinipal de la app
+        //Siempre debemos cambiar cualquier componente de la Interfaz en el Hilo principal de la App.
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.img.image = image;
+        });
+        
+    });
+    
+}
+
+
 @end
