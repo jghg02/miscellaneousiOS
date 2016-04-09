@@ -328,7 +328,27 @@ __Hilos__
         
     });
 
-__Importante__: En relación a los _hilos_ es importante que cualquier modificación que se realize a la interfaz se haga en el hilo principal de la app. 
+__Importante__: En relación a los _hilos_ es importante que cualquier modificación que se realize a la interfaz se haga en el hilo principal de la app.
+
+
+### ARC (Gestion de Memoria)
+
+- ###Con ARC:
+
+	__Strong__: Indica Propiedad de un objecto. 
+				Se _libera la memoria_ cuando los contadores de _punteros_ llegan a _cero_.
+				
+	__Weak__: Cuando un objeto no nos pertenece.
+			  Cuando el objeto _desaparezca de la memoria_ el _puntero sera puesto a __nil___ y cualquier mensaje retornara __cero__.
+			  
+			  
+- ###Sin ARC:
+
+	__Retain__: Similar a __Strong__ pero de debe liberar la memoria manualmente. La memoria puede liberarse de dos formas usando __Release__ o __Autorelease__
+	
+	__Assing__: Similar a __Weak__ pero el puntero no se asigna a __nil__ cuando se libera la memoria.
+
+ 
 
 
 Follow [@jghg02](https://twitter.com/jghg02) on Twitter.

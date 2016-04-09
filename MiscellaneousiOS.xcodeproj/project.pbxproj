@@ -26,6 +26,7 @@
 		D62906351C5B94F30051AA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D62906381C5B94F30051AA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D629063A1C5B94F30051AA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D648146F1C70F8FD0009EE93 /* new.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = new.playground; sourceTree = "<group>"; };
 		D672CC0E1C5BBD8300AA7AA1 /* SwiftPlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftPlayGround.playground; path = Swift/SwiftPlayGround.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D672CC0E1C5BBD8300AA7AA1 /* SwiftPlayGround.playground */,
+				D648146F1C70F8FD0009EE93 /* new.playground */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
